@@ -5,7 +5,7 @@ import {addZero} from '@/utils'
 import Image from 'next/image'
 
 export default function Home() {
-  const date = new Date('2024-08-20')
+  const date = new Date('2024-08-20 00:00:00')
   return (
     <main className="h-screen bg-[url('/img_bg_m.png')] md:bg-[url('/img_bg.png')] bg-[length:100%] md:bg-[length:100%] bg-no-repeat w-full">
       <div className="absolute md:pl-[52vw] md:pt-[5vw] text-center">
