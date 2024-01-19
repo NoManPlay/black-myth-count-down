@@ -21,7 +21,7 @@ const MiSans = localFont({
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en">
-      <body className={`${MiSans.variable}`}>
+      <body className={`${MiSans.variable} max-md:bg-[url('/img_bg_m.png')] max-md:bg-[length:100%] max-md:bg-no-repeat w-full`}>
         {children}
         <SpeedInsights />
         <Analytics />
