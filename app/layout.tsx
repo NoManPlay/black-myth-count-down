@@ -1,4 +1,5 @@
 import localFont from 'next/font/local'
+import {SpeedInsights} from '@vercel/speed-insights/next'
 import './globals.css'
 
 const MiSans = localFont({
@@ -19,7 +20,10 @@ const MiSans = localFont({
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en">
-      <body className={`${MiSans.variable}`}>{children}</body>
+      <body className={`${MiSans.variable}`}>
+        {children}
+        <SpeedInsights />
+      </body>
     </html>
   )
 }
