@@ -28,15 +28,23 @@ export default function Home() {
             {({timeLeft, isValidDate}) =>
               isValidDate ? (
                 <>
-                  <div>
-                    <span>{addZero(timeLeft?.days || 0)}</span>
-                    <span>天</span>
-                    <span>{addZero(timeLeft?.hours || 0)}</span>
-                    <span>:</span>
-                    <span>{addZero(timeLeft?.minutes || 0)}</span>
-                    <span>:</span>
-                    <span>{addZero(timeLeft?.seconds || 0)}</span>
-                  </div>
+                  {timeLeft?.days && timeLeft.days > 99 ? (
+                    <>
+                      <span>{addZero(timeLeft?.days || 0)}</span>天
+                      <span className="countdown">
+                        <span style={{'--value': addZero(timeLeft?.hours || 0)} as React.CSSProperties}></span>:
+                        <span style={{'--value': addZero(timeLeft?.minutes || 0)} as React.CSSProperties}></span>:
+                        <span style={{'--value': addZero(timeLeft?.seconds || 0)} as React.CSSProperties}></span>
+                      </span>
+                    </>
+                  ) : (
+                    <span className="countdown">
+                      <span style={{'--value': addZero(timeLeft?.days || 0)} as React.CSSProperties}></span>天
+                      <span style={{'--value': addZero(timeLeft?.hours || 0)} as React.CSSProperties}></span>:
+                      <span style={{'--value': addZero(timeLeft?.minutes || 0)} as React.CSSProperties}></span>:
+                      <span style={{'--value': addZero(timeLeft?.seconds || 0)} as React.CSSProperties}></span>
+                    </span>
+                  )}
                 </>
               ) : (
                 <div>直面天命</div>

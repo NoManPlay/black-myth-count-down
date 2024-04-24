@@ -7,17 +7,6 @@ body {
   color: #dfdad3;
 }
 
-.tnum {
-  font-family: 'MiSans';
-}
-
-@font-face {
-  font-family: 'MiSans';
-  src: url('./fonts/woff2/MiSans-Normal.woff2');
-  font-weight: normal;
-  font-style: normal;
-}
-
 ::-webkit-scrollbar {
   display: none;
 }
