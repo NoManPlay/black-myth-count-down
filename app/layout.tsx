@@ -1,6 +1,7 @@
 import {SpeedInsights} from '@vercel/speed-insights/next'
 import {Analytics} from '@vercel/analytics/react'
 import Image from 'next/image'
+import Metrics from './metrics'
 
 import './globals.css'
 import bg from '../public/img_bg.png'
@@ -36,6 +37,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         {children}
         <SpeedInsights />
         <Analytics />
+        <Metrics />
       </body>
     </html>
   )
