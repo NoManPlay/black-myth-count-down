@@ -5,7 +5,7 @@ import {addZero} from '@/utils'
 import Image from 'next/image'
 import logo from '../public/logo.png'
 import {isMobile} from 'react-device-detect'
-import {QQ_GROUP_ID, QQ_GROUP_URL} from '@/constants'
+import {GITHUB_URL, QQ_GROUP_ID, QQ_GROUP_URL} from '@/constants'
 
 export default function Home() {
   const date = new Date('2024-08-20 00:00:00')
@@ -48,31 +48,36 @@ export default function Home() {
             }
           </Countdown>
         </div>
+      </div>
 
-        {isMobile ? (
-          <button
-            className="btn btn-ghost"
-            onClick={() => {
-              window.open(QQ_GROUP_URL)
-            }}
-          >
-            <span className="icon-[mingcute--qq-fill] w-12 h-12 text-[#B09B7C]"></span>
-          </button>
-        ) : (
-          <a href="#my_modal">
-            <span className="icon-[mingcute--qq-fill] w-12 h-12 text-[#B09B7C]"></span>
+      {isMobile ? (
+        <div className="btm-nav bg-transparent">
+          <a href={QQ_GROUP_URL} target="_blank">
+            <span className="icon-[mingcute--qq-fill] w-8 h-8 text-[#B09B7C]"></span>
           </a>
-        )}
+          <a href={GITHUB_URL} target="_blank">
+            <span className="icon-[mingcute--github-fill] w-8 h-8 text-[#B09B7C]"></span>
+          </a>
+        </div>
+      ) : (
+        <div className="w-full absolute bottom-4 flex gap-4 justify-center">
+          <a href="#my_modal">
+            <span className="icon-[mingcute--qq-fill] w-8 h-8 text-[#B09B7C]"></span>
+          </a>
+          <a href={GITHUB_URL} target="_blank">
+            <span className="icon-[mingcute--github-fill] w-8 h-8 text-[#B09B7C]"></span>
+          </a>
+        </div>
+      )}
 
-        <div className="modal" role="dialog" id="my_modal">
-          <div className="modal-box bg-[#B09B7C]">
-            <h3 className="font-bold text-lg">QQ群</h3>
-            <p className="py-4">{QQ_GROUP_ID}</p>
-            <div className="modal-action">
-              <a href="#" className="btn text-[#B09B7C]">
-                关闭
-              </a>
-            </div>
+      <div className="modal" role="dialog" id="my_modal">
+        <div className="modal-box bg-[#B09B7C]">
+          <h3 className="font-bold text-lg">QQ群</h3>
+          <p className="py-4">{QQ_GROUP_ID}</p>
+          <div className="modal-action">
+            <a href="#" className="btn text-[#B09B7C]">
+              关闭
+            </a>
           </div>
         </div>
       </div>
