@@ -4,11 +4,10 @@ import Countdown from '@/components/CountDown'
 import {addZero} from '@/utils'
 import Image from 'next/image'
 import logo from '../public/logo.png'
-import {isMobile} from 'react-device-detect'
-import {GITHUB_URL, QQ_GROUP_ID, QQ_GROUP_URL} from '@/constants'
+import Nav from '@/components/Nav'
 
 export default function Home() {
-  const date = new Date('2024-08-20 00:00:00')
+  const date = new Date('2024-04-20 00:00:00')
   return (
     <main className="h-screen">
       <video preload="none" className="hidden md:block md:absolute md:w-full" autoPlay loop muted object-fit="fill">
@@ -43,44 +42,13 @@ export default function Home() {
                   )}
                 </>
               ) : (
-                <div>直面天命</div>
+                <></>
               )
             }
           </Countdown>
         </div>
       </div>
-
-      {isMobile ? (
-        <div className="btm-nav bg-transparent">
-          <a href={QQ_GROUP_URL} target="_blank">
-            <span className="icon-[mingcute--qq-fill] w-8 h-8 text-[#B09B7C]"></span>
-          </a>
-          <a href={GITHUB_URL} target="_blank">
-            <span className="icon-[mingcute--github-fill] w-8 h-8 text-[#B09B7C]"></span>
-          </a>
-        </div>
-      ) : (
-        <div className="w-full absolute bottom-4 flex gap-4 justify-center">
-          <a href="#my_modal">
-            <span className="icon-[mingcute--qq-fill] w-8 h-8 text-[#B09B7C]"></span>
-          </a>
-          <a href={GITHUB_URL} target="_blank">
-            <span className="icon-[mingcute--github-fill] w-8 h-8 text-[#B09B7C]"></span>
-          </a>
-        </div>
-      )}
-
-      <div className="modal" role="dialog" id="my_modal">
-        <div className="modal-box bg-[#B09B7C]">
-          <h3 className="font-bold text-lg">QQ群</h3>
-          <p className="py-4">{QQ_GROUP_ID}</p>
-          <div className="modal-action">
-            <a href="#" className="btn text-[#B09B7C]">
-              关闭
-            </a>
-          </div>
-        </div>
-      </div>
+      <Nav />
     </main>
   )
 }
