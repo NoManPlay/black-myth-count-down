@@ -7,7 +7,7 @@ import logo from '../public/logo.png'
 import Nav from '@/components/Nav'
 
 export default function Home() {
-  const date = new Date('2024-04-20 00:00:00')
+  const date = new Date('2024-08-20 00:00:00')
   return (
     <main className="h-screen">
       <video preload="none" className="hidden md:block md:absolute md:w-full" autoPlay loop muted object-fit="fill">
