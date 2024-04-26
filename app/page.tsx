@@ -18,7 +18,7 @@ export default function Home() {
           <Image src={logo} alt="black_myth" layout="fill" objectFit="contain" placeholder="blur" />
         </div>
         <p className="relative mt-[10vw] md:mt-0 text-[8vw] md:text-[3vw]">直面天命</p>
-        <div className="relative tnum tabular-nums text-[10vw] md:text-[4vw] text-[#B09B7C]">
+        <div className="relative tabular-nums text-[10vw] md:text-[4vw] text-[#B09B7C]">
           <Countdown date={date}>
             {({timeLeft, isValidDate}) =>
               isValidDate ? (
